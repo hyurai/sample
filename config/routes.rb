@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     get "login", :to => "users/sessions#new"
     get "logout", :to => "users/sessions#destroy"
   end
+
+  resources :users,only:[:show] do
+    
+  end
+
   resources :tweets,only:[:index,:new,:create,:show,:destroy] do
     resources :comments,only:[:create,:destroy]
   end
