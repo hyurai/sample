@@ -4,14 +4,14 @@ class TweetsController < ApplicationController
     end
 
     def new 
-
     end
 
     def create
     end
 
     def show
-        @tweets = Tweet.find(params[:id])
+        @tweet = Tweet.find(params[:id])
+        @comments = @tweets.comments
     end
 
     def destroy
