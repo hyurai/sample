@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :users,only:[:show] do
-    
+    resources :like,only:[:create,:destroy]
   end
 
   resources :tweets,only:[:index,:new,:create,:show,:destroy] do
